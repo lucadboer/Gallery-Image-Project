@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-img {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: 25px;
+    transition: all linear 0.2ms; 
+}
+
+.card-img > img {
+    height: 100%;
+    cursor: pointer;
+    transition: all linear 0.5s;
+}
+
+.card-img > img:hover {
+    transform: scale(1.1);
+    filter: grayscale(100%);
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.699);
+    position: fixed;
+    visibility: hidden;
+    z-index: 1;
+    opacity: 0;
+    transition: visibility 0.8s linear, opacity 0.5s linear
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#large-img {
+    width: 55vw;
+    transform: scale(0);
+    transition: all linear .3s;
+}
+
+.modal_active #large-img {
+    transform: scale(1);
+}
+
+#btn-close {
+    color: white;
+    background-color: black;
+    font-size: 38px;
+    border: 1px solid white;
+    text-align: center;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    transition: all ease-out 0.4s;
+}
+
+#btn-close:hover {
+    background-color: gray;
+}
+
+.modal_active {
+    visibility: visible;
+    opacity: 1;
+}
